@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Arial", system-ui, sans-serif;
+  }
+  
+  body {
+    background-color: #000;
+    color: #fff;
+    cursor: url('/assets/icons/cursor1.png') 2 2, auto;
+  }
+  
+  img, video {
+    @apply object-cover w-full h-full;
+  }
+} 
+
+@layer utilities {
+  /* Disable selection and iOS long-press callout */
+  .no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Prevent drag/save gesture on images/videos */
+  .no-drag {
+    -webkit-user-drag: none;
+    user-drag: none;
+  }
+
+  .cursor-media-cell {
+    cursor: url('/assets/icons/cursor2.png') 2 2, pointer;
+  }
+
+  .cursor-video-cell {
+    cursor: url('/assets/icons/muteAudio.png') 8 8, pointer;
+  }
+
+  /* Muted vs unmuted video cursors */
+  .cursor-video-muted {
+    cursor: url('/assets/icons/muteAudio.png') 8 8, pointer;
+  }
+
+  .cursor-video-unmuted {
+    cursor: url('/assets/icons/playAudio.png') 8 8, pointer;
+  }
+
+  .cursor-hero-ellipse {
+    cursor: url('/assets/icons/dove.png') 8 8, auto;
+  }
+
+  .cursor-brand-heart {
+    cursor: url('/assets/icons/heart.png') 8 8, pointer;
+  }
+
+  @keyframes hue-rotate {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+  }
+
+  .animate-hue {
+    animation: hue-rotate 2s linear infinite;
+  }
+}
